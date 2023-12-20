@@ -7,16 +7,12 @@ import math
 import math
 import os
 
-openscad_path = "/sync/hobby_reprap/models/openscad/"
-# sys.path.insert(0, openscad_path)
 from solidpython_ff import *
 import collections
 
-use(os.path.join(openscad_path, "../threads-scad/threads.scad"))
-# use(os.path.join(openscad_path, "roundCornersCube.scad"))
-# use(os.path.join(openscad_path, "nuts_and_bolts.scad"))
-# use(os.path.join(openscad_path, "Nema17.scad"))
-r_m3 = 1.7
+# that's from https://github.com/rcolyer/threads-scad
+use("../threads-scad/threads.scad")
+r_m3 = 1.7 # how big are the wholes for an m3 screw
 
 
 outer_diam = 125 + 20
@@ -71,4 +67,3 @@ dump(modela(), "pulley.scad")
 dump(modelb(), "quer.scad")
 dump(modelc(), "wheel_attach.scad")
 print("done")
-# dump(trichter(), "guide.scad")
